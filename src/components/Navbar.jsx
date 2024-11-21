@@ -5,7 +5,7 @@ const Navbar = () => {
     const navigate = useNavigate();
 
         return <div className={styles.container}>
-            <div className={styles.navbarLeft} >
+            <div className={styles.navbarLeft} style={{cursor:'pointer'}} onClick={()=>navigate('/')}>
                 Amazon.in
             </div>
             <div className={styles.navbarRight}>
