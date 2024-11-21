@@ -1,5 +1,6 @@
 .checkoutSummary {
-    flex: 1;
+  width: 300px;
+  height: 200px;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;

@@ -42,7 +42,17 @@
 }
 
 .itemActions .delete {
+  background-color: red;
+  color: #fff;
+  width: 80px;
+  font-weight: bold;
+}
+
+.itemActions .delete:hover {
   color: red;
+  transition-duration: 0.3s;
+ transition: ease-out 0.3s;
+  background-color: #fff;
   width: 80px;
   font-weight: bold;
 }

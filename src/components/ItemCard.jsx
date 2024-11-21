@@ -1,9 +1,8 @@
 import styles from "./ItemCard.module.css";
 
-const ItemCard = ({ item }) => {
+const ItemCard = ({ item,handleAddToCart }) => {
 
-  const handleAddToCart = () => {
-  }
+  
   return (
     <div className={styles.cardContainer}>
       <div className={styles.imageContainer}>
@@ -12,7 +11,7 @@ const ItemCard = ({ item }) => {
       <div className={styles.nameContainer}>{item.name}</div>
       <div className={styles.priceContainer}>Price : ₹{item.price}</div>
       <div className={styles.buttonContainer}>
-        <button onClick={handleAddToCart}>Add To Cart</button>
+        <button onClick={()=>handleAddToCart(item)}>Add To Cart</button>
       </div>
     </div>
   );

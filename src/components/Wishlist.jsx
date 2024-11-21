@@ -1,15 +1,25 @@
 import styles from "./Wishlist.module.css";
 import userWishlistAtom from "../store/wishItemsState";
 import ItemCard from "./ItemCard";
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import userCartAtom from "../store/cartItemsState";
 
 const Wishlist = () => {
-  const Wishlist = useRecoilValue(userWishlistAtom);
+  const [wishlist,setWishlist] = useRecoilState(userWishlistAtom);
+  const [cart,setCart] = useRecoilState(userCartAtom);
+
+  const handleAddToCart = (item) => {
+    const updatedWishlist = wishlist.filter(x=>x.id != item.id);
+    alert('Added to cart')
+    item.quantity=1;
+    setCart([...cart,item])
+    setWishlist(updatedWishlist);
+  }
   
   return (
     <div className={styles.wishlistContainer}>
-      {Wishlist.map((item, index) => {
-        return <ItemCard item={item} key={index} />;
+      {wishlist.map((item, index) => {
+        return <ItemCard item={item} key={index} handleAddToCart={handleAddToCart} />;
       })}
     </div>
   );
