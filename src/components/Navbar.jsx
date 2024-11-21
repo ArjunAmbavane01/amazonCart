@@ -1,14 +1,16 @@
 import styles from './Navbar.module.css';
+import {useNavigate} from 'react-router-dom';
 
 const Navbar = () => {
+    const navigate = useNavigate();
 
         return <div className={styles.container}>
-            <div className={styles.navbarLeft}>
+            <div className={styles.navbarLeft} >
                 Amazon.in
             </div>
             <div className={styles.navbarRight}>
-                <p>Wishlist</p>
-                <p>Cart</p>
+                <p style={{cursor:'pointer'}} onClick={()=>navigate('/wishlist')}>Wishlist</p>
+                <p style={{cursor:'pointer'}} onClick={()=>navigate('/cart')}>Cart</p>
             </div>
         </div>
 }
