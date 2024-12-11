@@ -1,18 +1,28 @@
-import styles from './Navbar.module.css';
-import {useNavigate} from 'react-router-dom';
+import styles from "./Navbar.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-        return <div className={styles.container}>
-            <div className={styles.navbarLeft} style={{cursor:'pointer'}} onClick={()=>navigate('/')}>
-                Amazon.in
-            </div>
-            <div className={styles.navbarRight}>
-                <p style={{cursor:'pointer'}} onClick={()=>navigate('/wishlist')}>Wishlist</p>
-                <p style={{cursor:'pointer'}} onClick={()=>navigate('/cart')}>Cart</p>
-            </div>
-        </div>
-}
+  return (
+    <div className={styles.container}>
+      <div
+        className={styles.navbarLeft}
+        style={{ cursor: "pointer" }}
+        onClick={() => navigate("/")}
+      >
+        Amazon.in
+      </div>
+      <div className={styles.navbarRight}>
+        <p style={{ cursor: "pointer" }} onClick={() => navigate("/wishlist")}>
+          Wishlist
+        </p>
+        <p style={{ cursor: "pointer" }} onClick={() => navigate("/cart")}>
+          Cart
+        </p>
+      </div>
+    </div>
+  );
+};
 
-export default Navbar
+export default Navbar;
